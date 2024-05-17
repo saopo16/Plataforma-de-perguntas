@@ -2,26 +2,29 @@
 package com.atv2.plataformaPR2.model;
 
 
+import jakarta.persistence.*;
 
+@Entity
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String email;
     private String senha;
-    // outros atributos e métodos
-    
+
     // Construtores
-    public Usuario() {
-    }
+    public Usuario() {}
 
     public Usuario(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
     }
-    
+
     // Getters e Setters
-    // id
+    // (métodos get e set)
+
     public Long getId() {
         return id;
     }
@@ -30,7 +33,6 @@ public class Usuario {
         this.id = id;
     }
 
-    // nome
     public String getNome() {
         return nome;
     }
@@ -39,7 +41,6 @@ public class Usuario {
         this.nome = nome;
     }
 
-    // email
     public String getEmail() {
         return email;
     }
@@ -48,7 +49,6 @@ public class Usuario {
         this.email = email;
     }
 
-    // senha
     public String getSenha() {
         return senha;
     }
@@ -56,4 +56,5 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+    
 }

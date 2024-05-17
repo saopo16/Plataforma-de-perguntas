@@ -1,26 +1,31 @@
 
 package com.atv2.plataformaPR2.model;
 
+import jakarta.persistence.*;
 
+@Entity
 public class Resposta {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String conteudo;
+
+    @ManyToOne
     private Usuario autor;
+
+    @ManyToOne
     private Pergunta pergunta;
-    // outros atributos e métodos
-    
+
     // Construtores
-    public Resposta() {
-    }
+    public Resposta() {}
 
     public Resposta(String conteudo, Usuario autor, Pergunta pergunta) {
         this.conteudo = conteudo;
         this.autor = autor;
         this.pergunta = pergunta;
     }
-    
+
     // Getters e Setters
-    // id
     public Long getId() {
         return id;
     }
@@ -29,7 +34,6 @@ public class Resposta {
         this.id = id;
     }
 
-    // conteudo
     public String getConteudo() {
         return conteudo;
     }
@@ -38,7 +42,6 @@ public class Resposta {
         this.conteudo = conteudo;
     }
 
-    // autor
     public Usuario getAutor() {
         return autor;
     }
@@ -47,7 +50,6 @@ public class Resposta {
         this.autor = autor;
     }
 
-    // pergunta
     public Pergunta getPergunta() {
         return pergunta;
     }

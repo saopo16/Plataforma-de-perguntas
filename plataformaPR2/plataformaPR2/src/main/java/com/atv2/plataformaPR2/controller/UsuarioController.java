@@ -1,32 +1,29 @@
 
 package com.atv2.plataformaPR2.controller;
 
-import com.atv2.plataformaPR2.util.ArmazenamentoTemporario;
+
+import com.atv2.plataformaPR2.model.Usuario;
+import com.atv2.plataformaPR2.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-    // Método para exibir formulário de cadastro de usuário
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
     @GetMapping("/cadastro")
     public String exibirFormularioCadastro() {
-        return "cadastro_usuario"; // Supondo que haja uma página chamada "cadastro_usuario.html" no diretório de templates
+        return "cadastro_usuario";
     }
 
-    // Método para cadastrar um novo usuário
     @PostMapping("/cadastro")
-    public String cadastrarUsuario(@RequestParam String nome, Model model) {
-        // Salvar o nome do usuário no armazenamento temporário
-        ArmazenamentoTemporario.setNomeUsuario(nome);
-        return "redirect:/";
+    public String cadastrarUsuario(@RequestParam String nome, @RequestParam String email, @RequestParam String senha) {
+        Usuario usuario = new Usuario(nome, email, senha);
+        usuarioRepository.save(usuario);
+        return "redirect:/home?nome=" + nome;
     }
 }
-
-    // Outros métodos para manipulação de usuários, como exibir perfil, editar perfil, etc.
-

@@ -1,32 +1,25 @@
 
 package com.atv2.plataformaPR2.model;
 
+import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import java.util.ArrayList;
-import java.util.List;
-
+@Entity
 public class Pergunta {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
     private String descricao;
-    private Usuario autor;
-    private List<Resposta> respostas = new ArrayList<>();
 
     // Construtores
-    public Pergunta() {
-    }
+    public Pergunta() {}
 
-    public Pergunta(String titulo, String descricao, Usuario autor) {
+    public Pergunta(String titulo, String descricao) {
         this.titulo = titulo;
         this.descricao = descricao;
-        this.autor = autor;
     }
 
     // Getters e Setters
-
     public Long getId() {
         return id;
     }
@@ -49,25 +42,5 @@ public class Pergunta {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public Usuario getAutor() {
-        return autor;
-    }
-
-    public void setAutor(Usuario autor) {
-        this.autor = autor;
-    }
-
-    public List<Resposta> getRespostas() {
-        return respostas;
-    }
-
-    public void setRespostas(List<Resposta> respostas) {
-        this.respostas = respostas;
-    }
-
-    public void adicionarResposta(Resposta resposta) {
-        this.respostas.add(resposta);
     }
 }

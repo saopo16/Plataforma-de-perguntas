@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.atv2.plataformaPR2.repository;
 
-/**
- *
- * @author prden
- */
-public class RespostaRepository {
-    
+import com.atv2.plataformaPR2.model.Resposta;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RespostaRepository extends JpaRepository<Resposta, Long> {
 }
