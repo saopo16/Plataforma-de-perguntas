@@ -1,15 +1,74 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Perguntas e Respostas - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff7f00; /* laranja */
+            font-size: 36px; /* tamanho maior */
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .content {
+            max-width: 800px; /* Definindo a largura máxima do conteúdo */
+            margin: 0 auto; /* Centralizando o conteúdo na página */
+            padding: 0 20px; /* Adicionando espaço interno */
+        }
+
+        p {
+            text-align: center;
+            color: #333;
+            font-size: 20px; /* tamanho maior */
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            text-align: center; /* Centralizar os botões */
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff7f00; /* laranja */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-right: 10px; /* Adicionando margem entre os botões */
+        }
+
+        a:hover {
+            background-color: #cc6600; /* laranja escuro */
+        }
+    </style>
+</head>
+<body>
+    <div class="content"> <!-- Container principal -->
+        <!-- Saudação personalizada com o nome do usuário -->
+        <h1>Olá, [[${nomeUsuario}]]!</h1>
+        <h2>Bem-vindo à Plataforma de Perguntas e Respostas</h2>
+        <p> <!-- ajuste de tamanho -->
+            Esta é uma plataforma onde os alunos podem fazer perguntas sobre seus estudos, obter ajuda de outros alunos e professores, compartilhar conhecimento e receber feedbacks para melhorar seu aprendizado.
+        </p>
+        <div class="button-container"> <!-- Contêiner para centralizar os botões -->
+            <a href="/perguntas/criar">Fazer Pergunta</a>
+            <a href="/respostas">Responder</a>
+        </div>
+    </div>
+</body>
 </html>

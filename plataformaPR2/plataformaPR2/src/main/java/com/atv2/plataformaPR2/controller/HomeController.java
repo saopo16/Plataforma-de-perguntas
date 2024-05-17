@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.atv2.plataformaPR2.controller;
 
-/**
- *
- * @author prden
- */
+
+import com.atv2.plataformaPR2.util.ArmazenamentoTemporario;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
 public class HomeController {
-    
+
+    // Método para exibir a página inicial
+    @GetMapping("/")
+    public String exibirHome(Model model) {
+        // Recuperar o nome do usuário do armazenamento temporário
+        String nomeUsuario = ArmazenamentoTemporario.getNomeUsuario();
+        // Adicionar o nome do usuário ao modelo para ser exibido na página
+        model.addAttribute("nomeUsuario", nomeUsuario);
+        return "home"; // Supondo que haja uma página chamada "home.html" no diretório de templates
+    }
 }
