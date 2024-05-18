@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Criação de Resposta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #ff7f00; /* laranja */
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ff7f00; /* laranja */
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #cc6600; /* laranja escuro */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Criação de Resposta</h1>
+    <form action="/respostas/criar" method="post">
+        <label for="conteudo">Conteúdo:</label><br>
+        <textarea id="conteudo" name="conteudo" rows="4" cols="50"></textarea><br>
+        <input type="hidden" name="perguntaId" th:value="${pergunta.id}">
+        <input type="submit" value="Responder">
+    </form>
+
+    <h2>Respostas Anteriores</h2>
+    <ul>
+        <li th:each="resposta : ${pergunta.respostas}">
+            <p th:text="${resposta.conteudo}"></p>
+        </li>
+    </ul>
+</body>
+</html>

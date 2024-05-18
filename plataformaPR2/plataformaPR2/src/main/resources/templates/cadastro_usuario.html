@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff7f00; /* laranja */
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ff7f00; /* laranja */
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #cc6600; /* laranja escuro */
+        }
+    </style>
+    <script>
+        function cadastrarUsuario() {
+            // Aqui você pode adicionar sua lógica de validação
+            // Por exemplo, verificar se os campos obrigatórios foram preenchidos
+
+            // Exemplo simples de validação
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+
+            if (!nome || !email) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            // Se a validação passar, você pode enviar o formulário
+            document.getElementById('formularioCadastro').submit();
+        }
+    </script>
+</head>
+<body>
+    <h1>Cadastro de Usuário</h1>
+    <form id="formularioCadastro" action="/usuarios/cadastro" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Adicione aqui outros campos do formulário, se necessário -->
+
+        <button type="button" onclick="cadastrarUsuario()">Cadastrar</button>
+    </form>
+</body>
+</html>

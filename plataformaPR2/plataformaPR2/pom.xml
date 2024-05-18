@@ -9,17 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>edu.university</groupId>
-<<<<<<< HEAD:prNovo/prNovo/pom.xml
-	<artifactId>prNovo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>prNovo</name>
-=======
 	<artifactId>plataformaPR</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>plataformaPR</name>
->>>>>>> 411c70aa9bf08b5f4937f631e241273a8dad00d9:plataformaPR2/plataformaPR2/pom.xml
+	<name>plataformaPR2</name>
 	<description>A platform for students and teachers to interact, ask questions, and provide answers outside the classroom environment.</description>
-	<properties>
+
+        <properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -35,15 +30,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-<<<<<<< HEAD:prNovo/prNovo/pom.xml
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-=======
 		
->>>>>>> 411c70aa9bf08b5f4937f631e241273a8dad00d9:plataformaPR2/plataformaPR2/pom.xml
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -57,6 +44,7 @@
 	</dependencies>
 
 	<build>
+            
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
